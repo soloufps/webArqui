@@ -1,0 +1,812 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-variant": "#2f3446", "on-tertiary": "#003824", "on-secondary-fixed-variant": "#004395", "tertiary-fixed-dim": "#4edea3", "error-container": "#93000a", "on-tertiary-fixed-variant": "#005236", "on-secondary-container": "#e6ecff", "on-primary-fixed": "#001f28", "on-surface": "#dee1f9", "outline": "#859399", "surface-container-low": "#161b2b", "surface-container": "#1a1f30", "on-secondary-fixed": "#001a42", "surface-container-lowest": "#080d1d", "inverse-on-surface": "#2b3041", "secondary-fixed": "#d8e2ff", "outline-variant": "#3c494e", "secondary-fixed-dim": "#adc6ff", "tertiary": "#69f6b9", "on-error-container": "#ffdad6", "on-surface-variant": "#bbc9cf", "background": "#0e1323", "on-primary-container": "#00566a", "surface": "#0e1323", "inverse-surface": "#dee1f9", "on-tertiary-fixed": "#002113", "surface-bright": "#34394a", "surface-dim": "#0e1323", "on-background": "#dee1f9", "primary-fixed-dim": "#47d6ff", "on-secondary": "#002e6a", "surface-tint": "#47d6ff", "secondary-container": "#0566d9", "on-primary-fixed-variant": "#004e60", "primary-container": "#00d2ff", "inverse-primary": "#00677f", "tertiary-fixed": "#6ffbbe", "error": "#ffb4ab", "secondary": "#adc6ff", "on-error": "#690005", "primary": "#a5e7ff", "on-tertiary-container": "#005b3d", "tertiary-container": "#48d99e", "surface-container-high": "#25293a", "surface-container-highest": "#2f3446", "on-primary": "#003543", "primary-fixed": "#b6ebff" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-xl": "2rem", "margin": "1rem", "space-sm": "0.5rem", "gutter": "1rem", "space-md": "0.875rem", "margin-desktop": "1.5rem", "gutter-desktop": "1.25rem", "space-lg": "1.25rem", "space-xs": "0.25rem" }, fontFamily: { "headline-lg": ["Inter"], "body-sm": ["Inter"], "headline-sm": ["Inter"], "headline-md": ["Inter"], "mono-sm": ["JetBrains Mono"], "body-lg": ["Inter"], "label-caps": ["Inter"], "mono-lg": ["JetBrains Mono"], "mono-md": ["JetBrains Mono"], "body-md": ["Inter"] }, fontSize: { "headline-lg": ["1.75rem", { lineHeight: "2.25rem", letterSpacing: "-0.02em", fontWeight: "700" }], "body-sm": ["0.75rem", { lineHeight: "1.125rem", fontWeight: "400" }], "headline-sm": ["1rem", { lineHeight: "1.5rem", fontWeight: "600" }], "headline-md": ["1.25rem", { lineHeight: "1.75rem", letterSpacing: "-0.01em", fontWeight: "600" }], "mono-sm": ["0.75rem", { lineHeight: "1rem", letterSpacing: "0.02em", fontWeight: "400" }], "body-lg": ["1rem", { lineHeight: "1.5rem", fontWeight: "400" }], "label-caps": ["0.6875rem", { lineHeight: "0.875rem", letterSpacing: "0.08em", fontWeight: "700" }], "mono-lg": ["1.125rem", { lineHeight: "1.5rem", letterSpacing: "0.05em", fontWeight: "600" }], "mono-md": ["0.875rem", { lineHeight: "1.25rem", letterSpacing: "0.025em", fontWeight: "500" }], "body-md": ["0.875rem", { lineHeight: "1.375rem", fontWeight: "400" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen selection:bg-primary-container selection:text-on-primary"><header class="fixed top-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-xl pt-safe shadow-[0_4px_20px_rgba(0,0,0,0.5)]"><div class="h-20 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="SEGMENT LAB Logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1XHRGHUjuzz8uVcL6jdxMILMMSsCKunwtFFpUX865s95GwpNsVqYMwSc5PTBa7cgrEY3iYrtMa0LAzYq3lZ-EL_qyJJTOeqSXYUVCKyI1N55pEiDKAUV5G7m5eLR80MFhKFTufYG3Uosfxx5BbOMm8C5XOPp6S5E5dnULl6oZcVFCDG8_23JW4Kk1WubQReZuk3aooexaxR10GyXGDWsLUVJzTOatsbtdacdf4QHSKvdcImiSOvO7ZMC44"/><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm tracking-tight text-primary font-bold truncate">SEGMENT LAB</span><span class="px-1.5 py-0.5 rounded bg-surface-container-high text-primary-fixed-dim font-mono-sm text-[10px] uppercase font-bold tracking-wider">x86</span></div><span class="font-label-caps text-[10px] text-on-surface-variant truncate uppercase tracking-wider">x86 Addressing Simulator</span></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><div class="hidden sm:flex items-center gap-1.5 px-2 py-1 rounded bg-surface-container-high/80"><span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span><span class="font-mono-sm text-[11px] text-tertiary font-medium">8086/80386 Ready</span></div><button class="w-11 h-11 flex items-center justify-center rounded bg-surface-container-high/60 text-on-surface-variant hover:text-primary transition-colors" title="Reinicio de Registros" type="button"><span class="material-symbols-outlined text-[20px]">restart_alt</span></button><button class="w-11 h-11 flex items-center justify-center rounded bg-surface-container-high/60 text-on-surface-variant hover:text-primary transition-colors" title="Ayuda Contextual y Manual x86" type="button"><span class="material-symbols-outlined text-[20px]">help</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-20 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full px-margin pb-space-xl space-y-space-md">
+<!-- 1. Technical Header & Workspace Status -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<div class="flex flex-wrap items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container animate-ping"></span>
+<span class="font-label-caps text-label-caps uppercase text-primary tracking-widest font-bold">Laboratorio Interactivo x86</span>
+</div>
+<div class="flex items-center bg-surface-container-high rounded px-2.5 py-1 text-on-surface-variant font-mono-sm text-mono-sm">
+<span class="material-symbols-outlined text-[14px] text-tertiary mr-1">speed</span>
+<span>Ciclo ALU: 4.77 MHz</span>
+</div>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md text-on-surface tracking-tight font-bold">
+        Laboratorio de Modo Real — x86 (8086)
+      </h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+        Cálculo del bus físico de 20 bits mediante arquitectura segmentada <span class="font-mono-sm text-primary font-medium">Segmento:Offset</span>.
+      </p>
+</div>
+<!-- Telemetry badges and Radix Switcher -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs bg-surface-container-lowest p-space-sm rounded-lg">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-primary text-[18px] flex-shrink-0">memory_alt</span>
+<span class="font-mono-sm text-mono-sm text-on-surface-variant truncate">
+          Espacio direccionable: <strong class="text-on-surface font-semibold">1 MB</strong> (20 bits, <span class="text-primary-fixed-dim">0x00000</span> – <span class="text-primary-fixed-dim">0xFFFFF</span>)
+        </span>
+</div>
+<!-- Radix toggle -->
+<div class="flex items-center bg-surface-container-high rounded p-0.5 self-start sm:self-auto flex-shrink-0">
+<button class="px-2.5 py-1 rounded bg-primary-container text-on-primary-fixed font-mono-sm text-mono-sm font-semibold transition-all shadow-sm" id="radix-hex-btn" type="button">
+          HEX (16)
+        </button>
+<button class="px-2.5 py-1 rounded text-on-surface-variant hover:text-on-surface font-mono-sm text-mono-sm transition-all" id="radix-dec-btn" type="button">
+          DEC (10)
+        </button>
+</div>
+</div>
+</div>
+<!-- 2. Register Inputs Workbench -->
+<div class="bg-surface-container rounded-xl p-space-md shadow-md space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">tune</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Registros de Origen</span>
+</div>
+<span class="font-label-caps text-label-caps uppercase px-2 py-0.5 rounded bg-tertiary-container/30 text-tertiary font-bold tracking-wider">
+        Bus 16 bits
+      </span>
+</div>
+<!-- Register Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Segment Register Input Block -->
+<div class="flex flex-col bg-surface-container-low rounded-lg p-space-sm space-y-space-xs">
+<div class="flex items-center justify-between">
+<label class="font-label-caps text-label-caps uppercase text-on-surface-variant font-bold tracking-wider" for="input-seg">
+            Segmento Base (16 bits)
+          </label>
+<div class="flex gap-1" id="seg-tag-group">
+<button class="seg-tag px-1.5 py-0.5 rounded bg-primary/20 text-primary font-mono-sm text-[10px] font-bold" data-val="1234" type="button">CS</button>
+<button class="seg-tag px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant hover:text-on-surface font-mono-sm text-[10px]" data-val="2000" type="button">DS</button>
+<button class="seg-tag px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant hover:text-on-surface font-mono-sm text-[10px]" data-val="7000" type="button">SS</button>
+<button class="seg-tag px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant hover:text-on-surface font-mono-sm text-[10px]" data-val="8500" type="button">ES</button>
+</div>
+</div>
+<div class="relative flex items-center bg-surface-container-lowest rounded px-space-sm py-2 focus-within:bg-surface-container-high transition-colors">
+<span class="font-mono-md text-mono-md text-outline font-semibold select-none pr-1">0x</span>
+<input class="w-full bg-transparent font-mono-lg text-mono-lg text-primary tracking-widest font-bold focus:outline-none uppercase" id="input-seg" maxlength="4" placeholder="0000" spellcheck="false" type="text" value="1234"/>
+<span class="font-mono-sm text-mono-sm text-on-surface-variant pl-2 select-none" id="seg-dec-hint">(4660₁₀)</span>
+</div>
+<p class="font-body-sm text-[11px] text-on-surface-variant">Multiplicado automáticamente por 0x10 (desplazamiento 4 bits).</p>
+</div>
+<!-- Offset Register Input Block -->
+<div class="flex flex-col bg-surface-container-low rounded-lg p-space-sm space-y-space-xs">
+<div class="flex items-center justify-between">
+<label class="font-label-caps text-label-caps uppercase text-on-surface-variant font-bold tracking-wider" for="input-offset">
+            Desplazamiento / Offset (16 bits)
+          </label>
+<div class="flex gap-1" id="off-tag-group">
+<button class="off-tag px-1.5 py-0.5 rounded bg-primary/20 text-primary font-mono-sm text-[10px] font-bold" data-val="0567" type="button">IP</button>
+<button class="off-tag px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant hover:text-on-surface font-mono-sm text-[10px]" data-val="0100" type="button">BX</button>
+<button class="off-tag px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant hover:text-on-surface font-mono-sm text-[10px]" data-val="FFFE" type="button">SP</button>
+<button class="off-tag px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant hover:text-on-surface font-mono-sm text-[10px]" data-val="0000" type="button">SI</button>
+</div>
+</div>
+<div class="relative flex items-center bg-surface-container-lowest rounded px-space-sm py-2 focus-within:bg-surface-container-high transition-colors">
+<span class="font-mono-md text-mono-md text-outline font-semibold select-none pr-1">0x</span>
+<input class="w-full bg-transparent font-mono-lg text-mono-lg text-secondary-fixed tracking-widest font-bold focus:outline-none uppercase" id="input-offset" maxlength="4" placeholder="0000" spellcheck="false" type="text" value="0567"/>
+<span class="font-mono-sm text-mono-sm text-on-surface-variant pl-2 select-none" id="off-dec-hint">(1383₁₀)</span>
+</div>
+<p class="font-body-sm text-[11px] text-on-surface-variant">Sumado de forma directa a la base física del segmento.</p>
+</div>
+</div>
+<!-- Active Validation Banner -->
+<div class="flex items-center justify-between px-3 py-2 rounded bg-surface-container-low text-tertiary" id="validation-banner">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="font-mono-sm text-mono-sm font-medium" id="validation-text">Entradas válidas: Rango 16 bits respetado (0x0000 a 0xFFFF).</span>
+</div>
+<span class="font-label-caps text-[10px] uppercase tracking-wider text-on-surface-variant">8086 OK</span>
+</div>
+<!-- Control Actions Toolbar -->
+<div class="flex flex-wrap items-center gap-space-xs pt-1">
+<button class="flex-1 sm:flex-none flex items-center justify-center gap-2 px-space-md py-2.5 rounded bg-primary-container text-on-primary-fixed font-headline-sm text-headline-sm font-semibold shadow-[0_0_18px_rgba(0,210,255,0.4)] hover:shadow-[0_0_24px_rgba(0,210,255,0.6)] active:scale-[0.98] transition-all" id="btn-calc" type="button">
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+<span>Calcular dirección física</span>
+</button>
+<button class="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded bg-surface-container-high hover:bg-surface-bright text-on-surface font-body-md text-body-md font-medium transition-colors" id="btn-example" type="button">
+<span class="material-symbols-outlined text-[18px] text-tertiary">casino</span>
+<span>Cargar ejemplo</span>
+</button>
+<button class="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded bg-surface-container-high hover:bg-surface-bright text-on-surface font-body-md text-body-md font-medium transition-colors" id="btn-toggle-steps" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary">menu_book</span>
+<span>Paso a paso</span>
+</button>
+<button class="flex items-center justify-center p-2.5 rounded bg-surface-container-high hover:bg-error-container hover:text-on-error-container text-on-surface-variant transition-colors" id="btn-clear" title="Limpiar registros a 0x0000" type="button">
+<span class="material-symbols-outlined text-[20px]">delete_sweep</span>
+</button>
+</div>
+</div>
+<!-- 3. Primary Computation Card -->
+<div class="relative overflow-hidden bg-surface-container-high rounded-xl p-space-md shadow-xl space-y-space-md">
+<!-- Radiant ambient glow background -->
+<div class="absolute -right-16 -top-16 w-56 h-56 bg-primary-container/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex flex-wrap items-center justify-between gap-space-xs relative z-10">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-primary-container/20 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[20px]">pin</span>
+</div>
+<div>
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-wider font-bold block">Bus Físico de Memoria</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Dirección Física Resultante (A0-A19)</span>
+</div>
+</div>
+<span class="font-mono-sm text-mono-sm px-2.5 py-1 rounded bg-surface-container-lowest text-primary font-bold">
+        Memoria Convencional (0x10000-0x9FFFF)
+      </span>
+</div>
+<!-- Giant Hex Output Box -->
+<div class="relative z-10 flex flex-col md:flex-row md:items-baseline justify-between bg-surface-container-lowest p-space-md rounded-lg gap-space-sm">
+<div class="flex flex-col">
+<span class="font-label-caps text-[11px] uppercase text-outline tracking-wider font-semibold">Salida Hexadecimal (20 bits)</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-mono-lg text-[2.25rem] leading-none text-primary-container font-extrabold tracking-wider drop-shadow-[0_0_12px_rgba(0,210,255,0.45)]" id="res-hex">
+            0x128A7
+          </span>
+<span class="font-mono-sm text-mono-sm text-tertiary font-medium">Línea activa</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-space-sm sm:gap-space-md">
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] uppercase text-outline">En Decimal</span>
+<span class="font-mono-md text-mono-md text-on-surface font-semibold" id="res-dec">75,943 bytes</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant font-mono-sm" id="res-kb">~ 74.16 KB</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] uppercase text-outline">Puntero Canónico Normalizado</span>
+<span class="font-mono-md text-mono-md text-secondary-fixed font-semibold" id="res-norm">0x128A:0x0007</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Offset mínimo (&lt; 0x10)</span>
+</div>
+</div>
+</div>
+<!-- 20-bit Binary Strip representation -->
+<div class="relative z-10 space-y-1.5">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-caps text-[10px] uppercase tracking-wider font-semibold">Líneas A19 a A0 (Binario agrupado por Nibbles)</span>
+<span class="font-mono-sm text-[11px] text-primary" id="binary-active-count">9 bits altos activos</span>
+</div>
+<div class="grid grid-cols-5 gap-1.5 font-mono-sm text-mono-sm text-center" id="binary-nibbles-container">
+<div class="bg-surface-container-lowest rounded p-1.5">
+<span class="block text-[9px] text-outline font-label-caps">A19-A16</span>
+<span class="text-primary font-bold tracking-widest text-[13px]" id="nibble-4">0001</span>
+</div>
+<div class="bg-surface-container-lowest rounded p-1.5">
+<span class="block text-[9px] text-outline font-label-caps">A15-A12</span>
+<span class="text-primary font-bold tracking-widest text-[13px]" id="nibble-3">0010</span>
+</div>
+<div class="bg-surface-container-lowest rounded p-1.5">
+<span class="block text-[9px] text-outline font-label-caps">A11-A8</span>
+<span class="text-primary font-bold tracking-widest text-[13px]" id="nibble-2">1000</span>
+</div>
+<div class="bg-surface-container-lowest rounded p-1.5">
+<span class="block text-[9px] text-outline font-label-caps">A7-A4</span>
+<span class="text-primary font-bold tracking-widest text-[13px]" id="nibble-1">1010</span>
+</div>
+<div class="bg-surface-container-lowest rounded p-1.5">
+<span class="block text-[9px] text-outline font-label-caps">A3-A0</span>
+<span class="text-primary font-bold tracking-widest text-[13px]" id="nibble-0">0111</span>
+</div>
+</div>
+</div>
+<!-- Breakdown Arithmetic Accordion/Summary -->
+<div class="relative z-10 bg-surface-container-low rounded-lg p-space-sm font-mono-sm text-mono-sm space-y-1 text-on-surface">
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-[12px] pb-1">
+<span>Operación interna 8086 (Sumador de segmento de silicio)</span>
+<span class="text-tertiary">Segment &lt;&lt; 4 + Offset</span>
+</div>
+<div class="flex items-center justify-between py-0.5">
+<span class="text-on-surface-variant">Base calculada del segmento:</span>
+<span class="text-primary font-bold" id="arith-base">0x1234 × 0x10 = 0x12340</span>
+</div>
+<div class="flex items-center justify-between py-0.5">
+<span class="text-on-surface-variant">Desplazamiento sumado (+):</span>
+<span class="text-secondary-fixed font-bold" id="arith-offset">+ 0x0567</span>
+</div>
+<div class="flex items-center justify-between pt-1 text-primary-container font-headline-sm text-headline-sm">
+<span>Dirección física en memoria:</span>
+<span id="arith-total">= 0x128A7</span>
+</div>
+</div>
+</div>
+<!-- 4. Interactive Bus & Hardware Wiring Diagram -->
+<div class="bg-surface-container rounded-xl p-space-md shadow-md space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-tertiary text-[20px]">schema</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Diagrama Esquemático del Bus 8086</h2>
+</div>
+<button class="flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high text-primary hover:text-primary-fixed font-mono-sm text-[11px] transition-colors" id="btn-pulse-bus" type="button">
+<span class="material-symbols-outlined text-[15px]">play_arrow</span>
+<span>Pulsar Señal</span>
+</button>
+</div>
+<!-- Bus Schematic Flow -->
+<div class="flex flex-col gap-space-sm bg-surface-container-lowest p-space-md rounded-lg relative overflow-hidden">
+<!-- Bus Lane 1: Segment Shifter -->
+<div class="flex flex-col sm:flex-row items-center gap-2 w-full justify-between">
+<!-- Segment Node -->
+<div class="w-full sm:w-auto flex-1 bg-surface-container-high rounded p-2.5 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-caps text-[9px] uppercase text-outline">Registro Segmento</span>
+<span class="font-mono-md text-mono-md text-primary font-bold" id="bus-node-seg">0x1234</span>
+</div>
+<span class="font-mono-sm text-[11px] px-1.5 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant">16b</span>
+</div>
+<!-- Shifter Arrow -->
+<div class="flex sm:flex-col items-center justify-center gap-1 text-primary-container py-1 sm:py-0 px-2">
+<span class="material-symbols-outlined text-[18px] rotate-90 sm:rotate-0">trending_flat</span>
+<span class="font-mono-sm text-[10px] font-bold whitespace-nowrap bg-surface-container-high px-1 rounded">&lt;&lt; 4 (×16)</span>
+</div>
+<!-- Shifted 20-bit Node -->
+<div class="w-full sm:w-auto flex-1 bg-surface-container-high rounded p-2.5 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-caps text-[9px] uppercase text-outline">Base Alineada a Párrafo</span>
+<span class="font-mono-md text-mono-md text-on-surface font-bold">
+<span class="text-primary" id="bus-node-seg-shift">0x1234</span><span class="text-primary-container font-extrabold">0</span>
+</span>
+</div>
+<span class="font-mono-sm text-[11px] px-1.5 py-0.5 rounded bg-surface-container-lowest text-tertiary">20b</span>
+</div>
+</div>
+<!-- Bus Connector SVG Graphics -->
+<div class="w-full h-8 flex items-center justify-center relative">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 400 32">
+<path d="M 100,2 L 100,16 L 200,16 L 200,30" fill="none" stroke="#2f3446" stroke-width="2"></path>
+<path d="M 300,2 L 300,16 L 200,16 L 200,30" fill="none" stroke="#2f3446" stroke-width="2"></path>
+<circle class="transition-all duration-300" cx="100" cy="8" fill="#00d2ff" id="bus-glow-dot1" r="3"></circle>
+<circle class="transition-all duration-300" cx="300" cy="8" fill="#adc6ff" id="bus-glow-dot2" r="3"></circle>
+</svg>
+</div>
+<!-- Bus Lane 2: Offset Line -->
+<div class="flex flex-col sm:flex-row items-center gap-2 w-full justify-between">
+<div class="w-full sm:w-auto flex-1 bg-surface-container-high rounded p-2.5 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-caps text-[9px] uppercase text-outline">Registro Offset</span>
+<span class="font-mono-md text-mono-md text-secondary-fixed font-bold" id="bus-node-off">0x0567</span>
+</div>
+<span class="font-mono-sm text-[11px] px-1.5 py-0.5 rounded bg-surface-container-lowest text-on-surface-variant">16b</span>
+</div>
+<div class="flex items-center justify-center p-2 rounded-full bg-primary-container text-on-primary-fixed shadow-md">
+<span class="material-symbols-outlined text-[20px] font-bold">add</span>
+</div>
+<div class="w-full sm:w-auto flex-1 bg-surface-container-high rounded p-2.5 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-caps text-[9px] uppercase text-outline">Extensión a 20 bits</span>
+<span class="font-mono-md text-mono-md text-on-surface font-bold">
+<span class="text-outline">0x0</span><span class="text-secondary-fixed" id="bus-node-off-ext">0567</span>
+</span>
+</div>
+<span class="font-mono-sm text-[11px] px-1.5 py-0.5 rounded bg-surface-container-lowest text-tertiary">20b</span>
+</div>
+</div>
+<!-- ALU Result Arrow to Address Bus -->
+<div class="flex flex-col items-center justify-center pt-2">
+<span class="material-symbols-outlined text-[24px] text-tertiary">south</span>
+<div class="w-full bg-surface-container-high rounded-lg p-3 flex flex-col sm:flex-row items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-[22px]">directions_bus</span>
+<div class="flex flex-col">
+<span class="font-label-caps text-[9px] uppercase text-outline">Bus de Direcciones Físico Multiplexado</span>
+<span class="font-mono-sm text-[12px] text-on-surface font-semibold">Líneas A0 – A19 (1.048.576 celdas únicas de 1 Byte)</span>
+</div>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-lowest px-3 py-1.5 rounded">
+<span class="font-label-caps text-[10px] uppercase text-tertiary">Alimentando Celda:</span>
+<span class="font-mono-lg text-mono-lg text-primary-container font-extrabold" id="bus-node-final">0x128A7</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 5. 1MB Physical Memory Map Scale -->
+<div class="bg-surface-container rounded-xl p-space-md shadow-md space-y-space-md">
+<div class="flex flex-wrap items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-[20px]">layers</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Mapa Físico de Memoria (1 MB)</h2>
+</div>
+<span class="font-mono-sm text-mono-sm text-on-surface-variant">0x00000 — 0xFFFFF</span>
+</div>
+<!-- Interactive Visual Bar with Regions -->
+<div class="space-y-space-xs">
+<!-- Graduation Track -->
+<div class="relative w-full h-11 bg-surface-container-lowest rounded-lg overflow-hidden flex shadow-inner">
+<!-- IVT (0x00000 - 0x003FF) ~ 0.1% visual min-width -->
+<div class="w-[3%] h-full bg-error-container/80 flex items-center justify-center text-[9px] font-mono-sm text-on-error-container font-bold" title="IVT: 0x00000 - 0x003FF (1 KB)">
+          IVT
+        </div>
+<!-- BDA (0x00400 - 0x004FF) ~ 0.1% visual -->
+<div class="w-[3%] h-full bg-on-tertiary-container/80 flex items-center justify-center text-[9px] font-mono-sm text-tertiary font-bold" title="BDA: 0x00400 - 0x004FF (256 bytes)">
+          BDA
+        </div>
+<!-- Free Conventional RAM (0x00500 - 0x9FFFF) ~ 60% -->
+<div class="w-[58%] h-full bg-secondary-container/20 relative flex items-center px-2">
+<span class="font-label-caps text-[10px] text-secondary-fixed tracking-wider uppercase truncate">RAM Convencional (hasta 640 KB)</span>
+<!-- Dynamic Pointer Indicator pin (positioned according to value) -->
+<div class="absolute top-0 bottom-0 w-1.5 bg-primary-container shadow-[0_0_10px_#00d2ff] transition-all duration-300" id="memory-pin" style="left: 11.4%;">
+<div class="absolute -top-1 -left-1.5 w-4 h-4 rounded-full bg-primary-container flex items-center justify-center shadow-lg">
+<span class="w-1.5 h-1.5 rounded-full bg-on-primary-fixed"></span>
+</div>
+</div>
+</div>
+<!-- Video RAM (0xA0000 - 0xBFFFF) ~ 12% -->
+<div class="w-[18%] h-full bg-surface-container-highest flex items-center justify-center text-[9px] font-mono-sm text-on-surface-variant font-bold text-center px-1" title="VRAM: 0xA0000 - 0xBFFFF (128 KB)">
+          VRAM
+        </div>
+<!-- ROM BIOS (0xF0000 - 0xFFFFF) ~ 18% -->
+<div class="w-[18%] h-full bg-primary/20 flex items-center justify-center text-[9px] font-mono-sm text-primary font-bold text-center px-1" title="BIOS ROM: 0xF0000 - 0xFFFFF (64 KB)">
+          BIOS ROM
+        </div>
+</div>
+<!-- Dynamic Destination Pin Readout -->
+<div class="flex items-center justify-between text-body-sm font-mono-sm pt-1">
+<div class="flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span class="font-semibold" id="pin-legend">Destino: 0x128A7 en RAM Convencional</span>
+</div>
+<span class="text-on-surface-variant text-[11px]" id="pin-percent">Posición relativa: 7.24% de 1MB</span>
+</div>
+</div>
+<!-- Memory Map Legend Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-space-xs font-mono-sm text-[11px] text-on-surface-variant pt-space-xs">
+<div class="flex items-center gap-2 bg-surface-container-low p-2 rounded">
+<span class="w-2.5 h-2.5 rounded-sm bg-error-container"></span>
+<div class="flex flex-col">
+<span class="text-on-surface font-semibold">0x00000 - 0x003FF</span>
+<span class="text-[10px]">IVT (1024 bytes)</span>
+</div>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-low p-2 rounded">
+<span class="w-2.5 h-2.5 rounded-sm bg-tertiary"></span>
+<div class="flex flex-col">
+<span class="text-on-surface font-semibold">0x00400 - 0x004FF</span>
+<span class="text-[10px]">BDA (Área BIOS)</span>
+</div>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-low p-2 rounded">
+<span class="w-2.5 h-2.5 rounded-sm bg-primary-container"></span>
+<div class="flex flex-col">
+<span class="text-on-surface font-semibold">0x00500 - 0x9FFFF</span>
+<span class="text-[10px]">RAM Libre (638 KB)</span>
+</div>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-low p-2 rounded">
+<span class="w-2.5 h-2.5 rounded-sm bg-surface-bright"></span>
+<div class="flex flex-col">
+<span class="text-on-surface font-semibold">0xA0000 - 0xBFFFF</span>
+<span class="text-[10px]">Video RAM (VGA/EGA)</span>
+</div>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-low p-2 rounded">
+<span class="w-2.5 h-2.5 rounded-sm bg-outline-variant"></span>
+<div class="flex flex-col">
+<span class="text-on-surface font-semibold">0xC0000 - 0xEFFFF</span>
+<span class="text-[10px]">Extensiones ROM</span>
+</div>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-low p-2 rounded">
+<span class="w-2.5 h-2.5 rounded-sm bg-primary"></span>
+<div class="flex flex-col">
+<span class="text-on-surface font-semibold">0xF0000 - 0xFFFFF</span>
+<span class="text-[10px]">Motherboard BIOS</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 6. Step-by-Step Interactive Pedagogical Stepper -->
+<div class="bg-surface-container rounded-xl p-space-md shadow-md space-y-space-md" id="step-by-step-panel">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">school</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Procedimiento Aritmético Paso a Paso</h2>
+</div>
+<span class="font-mono-sm text-mono-sm px-2.5 py-0.5 rounded bg-primary-container text-on-primary-fixed font-bold" id="step-indicator">
+        Paso 1 de 5
+      </span>
+</div>
+<!-- Stepper Navigation Bar -->
+<div class="grid grid-cols-5 gap-1.5">
+<button class="step-btn h-1.5 rounded-full bg-primary-container transition-all" data-step="1" type="button"></button>
+<button class="step-btn h-1.5 rounded-full bg-surface-container-highest transition-all" data-step="2" type="button"></button>
+<button class="step-btn h-1.5 rounded-full bg-surface-container-highest transition-all" data-step="3" type="button"></button>
+<button class="step-btn h-1.5 rounded-full bg-surface-container-highest transition-all" data-step="4" type="button"></button>
+<button class="step-btn h-1.5 rounded-full bg-surface-container-highest transition-all" data-step="5" type="button"></button>
+</div>
+<!-- Active Step Content Box -->
+<div class="bg-surface-container-low p-space-md rounded-lg space-y-space-xs min-h-[140px] flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-mono-sm text-[11px] px-2 py-0.5 rounded bg-surface-container-high text-primary font-bold" id="step-badge">FASE 1</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold" id="step-title">Lectura y decodificación del segmento</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed" id="step-desc">
+          Se lee el valor contenido en el registro de segmento (ej. <span class="font-mono-sm text-primary">CS = 0x1234</span>). En base diez, este valor equivale a <span class="font-mono-sm text-on-surface">4,660</span>.
+        </p>
+</div>
+<!-- Live Formula Micro-card -->
+<div class="mt-2 p-2.5 rounded bg-surface-container-lowest font-mono-sm text-mono-sm text-primary flex items-center justify-between" id="step-formula-box">
+<span class="text-on-surface-variant">Valor:</span>
+<span class="font-bold" id="step-formula">Segmento = 0x1234 (4660₁₀)</span>
+</div>
+</div>
+<!-- Stepper Bottom Controls -->
+<div class="flex items-center justify-between gap-space-xs pt-1">
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded bg-surface-container-high hover:bg-surface-bright disabled:opacity-40 disabled:pointer-events-none text-on-surface font-body-sm text-body-sm font-medium flex items-center gap-1 transition-colors" disabled="" id="btn-prev-step" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+<span>Anterior</span>
+</button>
+<button class="px-3 py-1.5 rounded bg-surface-container-high hover:bg-surface-bright text-on-surface font-body-sm text-body-sm font-medium flex items-center gap-1 transition-colors" id="btn-next-step" type="button">
+<span>Siguiente</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+<button class="px-3 py-1.5 rounded bg-tertiary-container/20 text-tertiary hover:bg-tertiary-container/30 font-mono-sm text-[12px] font-semibold flex items-center gap-1.5 transition-colors" id="btn-play-anim" type="button">
+<span class="material-symbols-outlined text-[16px]">motion_photos_auto</span>
+<span>Reproducir animación</span>
+</button>
+</div>
+</div>
+<!-- 7. Hardware Architecture Note -->
+<div class="bg-surface-container-low rounded-lg p-space-sm flex items-start gap-space-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[20px] flex-shrink-0 mt-0.5">info</span>
+<div class="space-y-0.5">
+<span class="font-label-caps text-label-caps uppercase text-on-surface tracking-wider font-bold block">
+        Nota de Arquitectura x86
+      </span>
+<p class="font-body-sm text-body-sm leading-relaxed text-on-surface-variant">
+        En un microprocesador 8086 físico con compuerta de línea <strong class="text-on-surface">A20 no habilitada</strong> se produce el clásico fenómeno de <strong class="text-primary font-mono-sm">wrapping</strong> en el límite de 1MB (direcciones superiores a <code class="font-mono-sm">0x100000</code> dan la vuelta a <code class="font-mono-sm">0x00000</code>). Este simulador modela la dirección física absoluta real resultante.
+      </p>
+</div>
+</div>
+</div>
+<script>
+(() => {
+  // Model state
+  let currentSegment = 0x1234;
+  let currentOffset = 0x0567;
+  let currentStep = 1;
+  let isHexMode = true;
+  let autoPlayInterval = null;
+
+  // Classic x86 presets
+  const presets = [
+    { seg: 0x1234, off: 0x0567, desc: "Ejemplo estándar de código" },
+    { seg: 0x0000, off: 0x7C00, desc: "Vector MBR de Arranque BIOS" },
+    { seg: 0xFFFF, off: 0x0000, desc: "Vector de Reset del 8086 (Power-On)" },
+    { seg: 0xB800, off: 0x0000, desc: "Buffer de Memoria de Video Texto CGA" },
+    { seg: 0x0000, off: 0x0080, desc: "Vector INT 20h (Terminar programa)" }
+  ];
+  let presetIdx = 0;
+
+  // DOM Elements
+  const segInput = document.getElementById('input-seg');
+  const offInput = document.getElementById('input-offset');
+  const segDecHint = document.getElementById('seg-dec-hint');
+  const offDecHint = document.getElementById('off-dec-hint');
+  const resHex = document.getElementById('res-hex');
+  const resDec = document.getElementById('res-dec');
+  const resKb = document.getElementById('res-kb');
+  const resNorm = document.getElementById('res-norm');
+  const arithBase = document.getElementById('arith-base');
+  const arithOffset = document.getElementById('arith-offset');
+  const arithTotal = document.getElementById('arith-total');
+  const memPin = document.getElementById('memory-pin');
+  const pinLegend = document.getElementById('pin-legend');
+  const pinPercent = document.getElementById('pin-percent');
+
+  // Bus nodes
+  const busNodeSeg = document.getElementById('bus-node-seg');
+  const busNodeSegShift = document.getElementById('bus-node-seg-shift');
+  const busNodeOff = document.getElementById('bus-node-off');
+  const busNodeOffExt = document.getElementById('bus-node-off-ext');
+  const busNodeFinal = document.getElementById('bus-node-final');
+
+  // Binary Nibbles
+  const nibbles = [
+    document.getElementById('nibble-0'),
+    document.getElementById('nibble-1'),
+    document.getElementById('nibble-2'),
+    document.getElementById('nibble-3'),
+    document.getElementById('nibble-4')
+  ];
+  const binaryCount = document.getElementById('binary-active-count');
+
+  // Stepper Elements
+  const stepIndicator = document.getElementById('step-indicator');
+  const stepBadge = document.getElementById('step-badge');
+  const stepTitle = document.getElementById('step-title');
+  const stepDesc = document.getElementById('step-desc');
+  const stepFormula = document.getElementById('step-formula');
+  const stepButtons = document.querySelectorAll('.step-btn');
+  const btnPrevStep = document.getElementById('btn-prev-step');
+  const btnNextStep = document.getElementById('btn-next-step');
+
+  function toHex4(val) {
+    return (val & 0xFFFF).toString(16).toUpperCase().padStart(4, '0');
+  }
+
+  function toHex5(val) {
+    return (val & 0xFFFFF).toString(16).toUpperCase().padStart(5, '0');
+  }
+
+  function recalculate() {
+    // 8086 Physical Address Math
+    const shiftedBase = (currentSegment << 4);
+    const physical = (shiftedBase + currentOffset) & 0xFFFFF;
+
+    // Normalization: segment = physical >> 4, offset = physical & 0xF
+    const normSeg = (physical >> 4) & 0xFFFF;
+    const normOff = physical & 0x000F;
+
+    // Update Primary Card
+    resHex.textContent = '0x' + toHex5(physical);
+    resDec.textContent = physical.toLocaleString() + ' bytes';
+    resKb.textContent = '~ ' + (physical / 1024).toFixed(2) + ' KB';
+    resNorm.textContent = '0x' + toHex4(normSeg) + ':0x' + toHex4(normOff);
+
+    // Update Breakdown
+    arithBase.textContent = `0x${toHex4(currentSegment)} × 0x10 = 0x${toHex5(shiftedBase)}`;
+    arithOffset.textContent = `+ 0x${toHex4(currentOffset)}`;
+    arithTotal.textContent = `= 0x${toHex5(physical)}`;
+
+    // Update Hardware Bus Nodes
+    busNodeSeg.textContent = '0x' + toHex4(currentSegment);
+    busNodeSegShift.textContent = '0x' + toHex4(currentSegment);
+    busNodeOff.textContent = '0x' + toHex4(currentOffset);
+    busNodeOffExt.textContent = toHex4(currentOffset);
+    busNodeFinal.textContent = '0x' + toHex5(physical);
+
+    // Update Binary 20-bit Strip
+    const binStr = physical.toString(2).padStart(20, '0');
+    let highBits = 0;
+    for (let i = 0; i < 5; i++) {
+      // nibbles array is 0 (lowest) to 4 (highest)
+      const start = 16 - (i * 4);
+      const piece = binStr.substring(start, start + 4);
+      nibbles[i].textContent = piece;
+      for (const char of piece) if (char === '1') highBits++;
+    }
+    binaryCount.textContent = `${highBits} bits altos activos`;
+
+    // Update Memory Map scale
+    const totalBytes = 0x100000; // 1 MB
+    const pct = Math.min(100, Math.max(0, (physical / totalBytes) * 100));
+    memPin.style.left = `${pct.toFixed(2)}%`;
+    pinPercent.textContent = `Posición relativa: ${pct.toFixed(2)}% de 1MB`;
+
+    // Map zone classification
+    let zone = "RAM Convencional libre";
+    if (physical < 0x0400) zone = "IVT (Tabla de Vectores de Interrupción)";
+    else if (physical < 0x0500) zone = "BDA (Área de Datos de la BIOS)";
+    else if (physical >= 0xA0000 && physical <= 0xBFFFF) zone = "Video RAM (VGA / Framebuffer)";
+    else if (physical >= 0xC0000 && physical < 0xF0000) zone = "Extensiones ROM de Hardware";
+    else if (physical >= 0xF0000) zone = "BIOS ROM del Sistema";
+
+    pinLegend.textContent = `Destino: 0x${toHex5(physical)} en ${zone}`;
+
+    // Update hints
+    segDecHint.textContent = `(${currentSegment.toLocaleString()}₁₀)`;
+    offDecHint.textContent = `(${currentOffset.toLocaleString()}₁₀)`;
+
+    // Update active step text
+    updateStepView();
+  }
+
+  function updateStepView() {
+    const shiftedBase = (currentSegment << 4);
+    const physical = (shiftedBase + currentOffset) & 0xFFFFF;
+
+    stepButtons.forEach((btn, idx) => {
+      const stepNum = idx + 1;
+      if (stepNum === currentStep) {
+        btn.classList.remove('bg-surface-container-highest');
+        btn.classList.add('bg-primary-container');
+      } else {
+        btn.classList.remove('bg-primary-container');
+        btn.classList.add('bg-surface-container-highest');
+      }
+    });
+
+    stepIndicator.textContent = `Paso ${currentStep} de 5`;
+    btnPrevStep.disabled = currentStep === 1;
+    btnNextStep.disabled = currentStep === 5;
+
+    switch (currentStep) {
+      case 1:
+        stepBadge.textContent = "FASE 1: LECTURA";
+        stepTitle.textContent = "Interpretar el Segmento en Hexadecimal";
+        stepDesc.textContent = `Se extrae el registro de segmento 0x${toHex4(currentSegment)}, que corresponde a ${currentSegment.toLocaleString()} en formato decimal. Define el bloque inicial de 64 KB.`;
+        stepFormula.textContent = `Segmento = 0x${toHex4(currentSegment)} (${currentSegment.toLocaleString()}₁₀)`;
+        break;
+      case 2:
+        stepBadge.textContent = "FASE 2: SHIFT ALINEADO";
+        stepTitle.textContent = "Multiplicar el Segmento por 16 (<< 4)";
+        stepDesc.textContent = `El procesador 8086 desplaza el valor del segmento 4 posiciones a la izquierda en binario (o multiplica por 16 en base diez).`;
+        stepFormula.textContent = `0x${toHex4(currentSegment)} << 4 = 0x${toHex5(shiftedBase)} (${shiftedBase.toLocaleString()}₁₀)`;
+        break;
+      case 3:
+        stepBadge.textContent = "FASE 3: BASE FÍSICA";
+        stepTitle.textContent = "Definición del Inicio del Párrafo Físico";
+        stepDesc.textContent = `La base del segmento queda anclada físicamente en la memoria en la dirección 0x${toHex5(shiftedBase)}. Todos los accesos de este segmento partirán desde aquí.`;
+        stepFormula.textContent = `Base del Segmento = 0x${toHex5(shiftedBase)}`;
+        break;
+      case 4:
+        stepBadge.textContent = "FASE 4: SUMA DEL OFFSET";
+        stepTitle.textContent = "Sumar el Registro de Desplazamiento";
+        stepDesc.textContent = `A la base física se le añade el valor del desplazamiento 0x${toHex4(currentOffset)} (${currentOffset.toLocaleString()}₁₀). Operación efectuada por la unidad de bus interna.`;
+        stepFormula.textContent = `0x${toHex5(shiftedBase)} + 0x${toHex4(currentOffset)} = ${shiftedBase.toLocaleString()} + ${currentOffset.toLocaleString()}`;
+        break;
+      case 5:
+        stepBadge.textContent = "FASE 5: DIRECCIÓN FINAL";
+        stepTitle.textContent = "Conversión a Dirección Físico-Canónica";
+        stepDesc.textContent = `El resultado final genera la dirección física de 20 bits colocada en los pines A0-A19 para direccionar el byte de memoria RAM específico.`;
+        stepFormula.textContent = `Bus A0-A19 = 0x${toHex5(physical)} (${physical.toLocaleString()} bytes)`;
+        break;
+    }
+  }
+
+  // Input event listeners with sanitize
+  function sanitizeHexInput(inputEl, fallbackVal) {
+    let clean = inputEl.value.replace(/[^0-9A-Fa-f]/g, '').slice(0, 4);
+    if (!clean) clean = "0";
+    return parseInt(clean, 16) || fallbackVal;
+  }
+
+  segInput.addEventListener('input', () => {
+    currentSegment = sanitizeHexInput(segInput, 0);
+    recalculate();
+  });
+
+  offInput.addEventListener('input', () => {
+    currentOffset = sanitizeHexInput(offInput, 0);
+    recalculate();
+  });
+
+  // Segment Tags Click
+  document.querySelectorAll('.seg-tag').forEach(tag => {
+    tag.addEventListener('click', () => {
+      const val = parseInt(tag.dataset.val, 16);
+      currentSegment = val;
+      segInput.value = toHex4(val);
+      document.querySelectorAll('.seg-tag').forEach(t => t.classList.replace('bg-primary/20', 'bg-surface-container-high'));
+      tag.classList.replace('bg-surface-container-high', 'bg-primary/20');
+      recalculate();
+    });
+  });
+
+  // Offset Tags Click
+  document.querySelectorAll('.off-tag').forEach(tag => {
+    tag.addEventListener('click', () => {
+      const val = parseInt(tag.dataset.val, 16);
+      currentOffset = val;
+      offInput.value = toHex4(val);
+      document.querySelectorAll('.off-tag').forEach(t => t.classList.replace('bg-primary/20', 'bg-surface-container-high'));
+      tag.classList.replace('bg-surface-container-high', 'bg-primary/20');
+      recalculate();
+    });
+  });
+
+  // Calculate Button pulse animation
+  document.getElementById('btn-calc').addEventListener('click', () => {
+    recalculate();
+    resHex.classList.add('scale-105');
+    setTimeout(() => resHex.classList.remove('scale-105'), 200);
+  });
+
+  // Load Example preset
+  document.getElementById('btn-example').addEventListener('click', () => {
+    presetIdx = (presetIdx + 1) % presets.length;
+    const p = presets[presetIdx];
+    currentSegment = p.seg;
+    currentOffset = p.off;
+    segInput.value = toHex4(p.seg);
+    offInput.value = toHex4(p.off);
+    recalculate();
+  });
+
+  // Clear Registers
+  document.getElementById('btn-clear').addEventListener('click', () => {
+    currentSegment = 0x0000;
+    currentOffset = 0x0000;
+    segInput.value = "0000";
+    offInput.value = "0000";
+    recalculate();
+  });
+
+  // Toggle Steps View
+  document.getElementById('btn-toggle-steps').addEventListener('click', () => {
+    const el = document.getElementById('step-by-step-panel');
+    el.scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // Stepper Buttons
+  btnPrevStep.addEventListener('click', () => {
+    if (currentStep > 1) {
+      currentStep--;
+      updateStepView();
+    }
+  });
+
+  btnNextStep.addEventListener('click', () => {
+    if (currentStep < 5) {
+      currentStep++;
+      updateStepView();
+    }
+  });
+
+  stepButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      currentStep = parseInt(btn.dataset.step, 10);
+      updateStepView();
+    });
+  });
+
+  // Animate Stepper Cycle
+  document.getElementById('btn-play-anim').addEventListener('click', () => {
+    if (autoPlayInterval) {
+      clearInterval(autoPlayInterval);
+      autoPlayInterval = null;
+      document.getElementById('btn-play-anim').innerHTML = `<span class="material-symbols-outlined text-[16px]">motion_photos_auto</span><span>Reproducir animación</span>`;
+      return;
+    }
+    currentStep = 1;
+    updateStepView();
+    document.getElementById('btn-play-anim').innerHTML = `<span class="material-symbols-outlined text-[16px]">pause</span><span>Pausar</span>`;
+    
+    autoPlayInterval = setInterval(() => {
+      if (currentStep < 5) {
+        currentStep++;
+        updateStepView();
+      } else {
+        clearInterval(autoPlayInterval);
+        autoPlayInterval = null;
+        document.getElementById('btn-play-anim').innerHTML = `<span class="material-symbols-outlined text-[16px]">motion_photos_auto</span><span>Reproducir animación</span>`;
+      }
+    }, 1200);
+  });
+
+  // Pulse Bus Animation
+  document.getElementById('btn-pulse-bus').addEventListener('click', () => {
+    const dot1 = document.getElementById('bus-glow-dot1');
+    const dot2 = document.getElementById('bus-glow-dot2');
+    dot1.setAttribute('r', '6');
+    dot2.setAttribute('r', '6');
+    setTimeout(() => {
+      dot1.setAttribute('r', '3');
+      dot2.setAttribute('r', '3');
+    }, 400);
+  });
+
+  // Radix Buttons
+  const hexBtn = document.getElementById('radix-hex-btn');
+  const decBtn = document.getElementById('radix-dec-btn');
+
+  hexBtn.addEventListener('click', () => {
+    isHexMode = true;
+    hexBtn.className = "px-2.5 py-1 rounded bg-primary-container text-on-primary-fixed font-mono-sm text-mono-sm font-semibold transition-all shadow-sm";
+    decBtn.className = "px-2.5 py-1 rounded text-on-surface-variant hover:text-on-surface font-mono-sm text-mono-sm transition-all";
+    segInput.value = toHex4(currentSegment);
+    offInput.value = toHex4(currentOffset);
+  });
+
+  decBtn.addEventListener('click', () => {
+    isHexMode = false;
+    decBtn.className = "px-2.5 py-1 rounded bg-primary-container text-on-primary-fixed font-mono-sm text-mono-sm font-semibold transition-all shadow-sm";
+    hexBtn.className = "px-2.5 py-1 rounded text-on-surface-variant hover:text-on-surface font-mono-sm text-mono-sm transition-all";
+  });
+
+  // Initial Calculation Run
+  recalculate();
+})();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-4px_24px_rgba(0,0,0,0.6)]" data-active-classes="text-primary bg-surface-container-high/80 rounded-lg"><div class="flex items-center justify-between overflow-x-auto h-16 px-space-xs gap-space-xs scrollbar-none"><a class="flex flex-col items-center justify-center min-w-[56px] h-12 px-2 text-on-surface-variant hover:text-on-surface transition-all flex-shrink-0" data-path="inicio-lab" href="index.html"><span class="material-symbols-outlined text-[20px]">memory</span><span class="font-label-caps text-[9px] mt-0.5 tracking-wider uppercase font-semibold">Lab</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] h-12 px-2 transition-all flex-shrink-0 text-primary bg-surface-container-high/80 rounded-lg" data-path="modo-real" href="modo_real.html"><span class="material-symbols-outlined text-[20px]">calculate</span><span class="font-label-caps text-[9px] mt-0.5 tracking-wider uppercase font-semibold">Real</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 px-2 text-on-surface-variant hover:text-on-surface transition-all flex-shrink-0" data-path="modo-protegido" href="modo_protegido.html"><span class="material-symbols-outlined text-[20px]">shield</span><span class="font-label-caps text-[9px] mt-0.5 tracking-wider uppercase font-semibold">Protegido</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 px-2 text-on-surface-variant hover:text-on-surface transition-all flex-shrink-0" data-path="reversing" href="descriptor_reversing.html"><span class="material-symbols-outlined text-[20px]">terminal</span><span class="font-label-caps text-[9px] mt-0.5 tracking-wider uppercase font-semibold">Reversing</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 px-2 text-on-surface-variant hover:text-on-surface transition-all flex-shrink-0" data-path="comparador" href="index.html"><span class="material-symbols-outlined text-[20px]">compare_arrows</span><span class="font-label-caps text-[9px] mt-0.5 tracking-wider uppercase font-semibold">Comparar</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 px-2 text-on-surface-variant hover:text-on-surface transition-all flex-shrink-0" data-path="tutorial" href="index.html"><span class="material-symbols-outlined text-[20px]">school</span><span class="font-label-caps text-[9px] mt-0.5 tracking-wider uppercase font-semibold">Tutorial</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 px-2 text-on-surface-variant hover:text-on-surface transition-all flex-shrink-0" data-path="tests" href="index.html"><span class="material-symbols-outlined text-[20px]">checklist</span><span class="font-label-caps text-[9px] mt-0.5 tracking-wider uppercase font-semibold">Tests</span></a></div></nav></body></html>
